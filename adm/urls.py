@@ -22,6 +22,8 @@ api_v1_patterns = [
     path('token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('token/verify/', jwt_views.TokenVerifyView.as_view(), name='token_verify'),
+    path('snippet/', include('apps.snippets.urls')),
+    path('tags/', include('apps.shared.urls')),
 ]
 
 urlpatterns = [

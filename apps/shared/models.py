@@ -21,3 +21,6 @@ class Tag(models.Model):
     """
     # TODO add a timestamp?
     title = models.CharField(_('Title'), max_length=120, unique=True)
+
+    def __str__(self):
+        return self.title

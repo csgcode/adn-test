@@ -15,3 +15,6 @@ class Snippet(models.Model):
     code = models.CharField(_('Snippet Description'), max_length=255)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='snip_user')
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE, blank=True, null=True, related_name='snip_tag')
+
+    def __str__(self):
+        return self.title
