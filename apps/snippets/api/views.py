@@ -9,7 +9,7 @@ class SnippetViewSet(SerializerClassMixin, ModelViewSet):
     """
     ModelViewSet for Snippet, Can perform CRUD
     """
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Snippet.objects.all()
     serializer_class = SnippetModelSerializer
     serializer_action_classes = {

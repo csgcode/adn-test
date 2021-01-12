@@ -18,3 +18,9 @@ class Snippet(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if self._state.adding:
+            #TODO logic on create - condition check for check the title
+            pass
+        super().save(*args, **kwargs)
