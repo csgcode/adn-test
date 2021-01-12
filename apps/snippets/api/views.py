@@ -16,4 +16,10 @@ class SnippetViewSet(SerializerClassMixin, ModelViewSet):
         'list': SnippetListSerializer,
     }
 
+    def perform_create(self, serializer):
+        """
+        set logged in user as user while creating a Snippet instance
+        """
+        serializer.save(user=self.request.user)
+
 
